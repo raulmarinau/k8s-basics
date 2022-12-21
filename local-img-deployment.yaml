@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kube-local-img
+  name: kube-local-img
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-local-img
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kube-local-img
+    spec:
+      containers:
+      - image: golang-v2
+        name: golang-v2
+        resources: {}
+        imagePullPolicy: Never
+status: {}
